@@ -38,6 +38,7 @@ public class Main {
         es.invokeAll(tasks).forEach( x -> {
             try {
                 x.get();
+                System.out.println("future.get = " + x.get().getName());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             } catch (ExecutionException e) {
